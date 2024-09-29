@@ -1,0 +1,263 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <script src="../static/js/echarts.min.js"></script>
+        <title>电商交易数据可视化</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico in the root directory -->
+        
+
+        <!-- All css here -->
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="../static/css/animate.css">
+        <link rel="stylesheet" href="../static/css/slick.css">
+        <link rel="stylesheet" href="../static/css/meanmenu.css">
+        <link rel="stylesheet" href="../static/css/default.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/responsive.css">
+
+
+        <style>
+        .example-div {
+            width: 1200px;
+            height: 700px;
+            top: 10px;
+            bottom: 0;
+            right: 30px;
+        }
+        </style>
+
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        <!--  ====== preloader=============================================  -->
+        <div id="preloader">
+            <div id="loading">
+                <div id="loading-center">
+                    <div id="loading-center-absolute">
+                    <div class="object" id="object_one"></div>
+                    <div class="object" id="object_two"></div>
+                    <div class="object" id="object_three"></div>
+                    <div class="object" id="object_four"></div>
+                    <div class="object" id="object_five"></div>
+                    <div class="object" id="object_six"></div>
+                    <div class="object" id="object_seven"></div>
+                    <div class="object" id="object_eight"></div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div><!-- /preloader -->
+
+        <!--  ====== header-area-start=======================================  -->
+        <header>
+            <div id="header-sticky" class="transparent-header header-area">
+                <div class="header header5">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3 col-4">
+                                <div class="logo d-inline-block">
+                                    <a href="/home"><h1 class="text-white wow fadeIn f-700 pb-15 transition-3" style="margin-left: -300px">电商交易数据可视化</h1></a>
+
+                                </div>
+                            </div><!-- /col -->
+                            <div class="col-xl-8 col-lg-9 col-md-8 col-sm-8 col-8 d-flex justify-content-end" style="margin-right: -400px">
+                               <div class="main-menu">
+                                   <nav id="mobile-menu">
+                                        <ul class="d-block">
+                                            <li>
+                                                <a class="active text-white" href="/home">首 页</a>
+                                            </li>
+                                            <li>
+                                                <a class="text-white" href="/rata">男女比例</a>
+                                            </li>
+                                            <li>
+                                                <a class="text-white" href="/action">消费行为</a>
+                                            </li>
+                                            <li>
+                                                <a class="text-white" href="/age">年龄数据</a>
+                                            </li>
+                                            <li>
+                                                <a class="text-white" href="/item">热门商品词云</a>
+                                            </li>
+                                            <li>
+                                                <a class="text-white" href="/province">各省份消费数据</a>
+                                            </li>
+                                             <li>
+                                                <a class="text-white" href="/recall">回头客预测</a>
+                                            </li>
+                                        </ul>
+                                   </nav>
+                               </div><!-- /main-menu -->
+
+                            </div><!-- /col -->
+                        </div><!-- /row -->
+                    </div><!-- /container -->
+                </div>
+            </div><!-- /header-bottom -->
+        </header>
+        <!--  header-area-end  -->
+
+
+        <!--  ====== header extra info start================================== -->
+            <!-- side-mobile-menu start -->
+            <div class="side-mobile-menu bg-white pt-50  pb-30 pl-30 pr-30">
+                <div class="close-icon float-right pt-10 mb-20">
+                    <a href="javascript:void(0);"><span class="icon-clear theme-color"><i class="fa fa-times"></i></span></a>
+                </div>
+                <div class="mobile-menu"></div>
+
+                <ul class="social-link text-center text-md-right pt-50 pb-50 clear-both">
+                    <li class="d-inline-block">
+                        <a class="facebook-color text-center pl-15 d-inline-block transition-3" href="/"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="twitter-color text-center pl-15 d-inline-block transition-3" href="/"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="google-plus-color text-center pl-15 d-inline-block transition-3" href="/"><i class="fab fa-google-plus-g"></i></a>
+                    </li>
+                    <li class="d-inline-block">
+                        <a class="linkedin-color text-center pl-15 d-inline-block transition-3" href="/"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                </ul><!-- social-link -->
+            </div><!-- /side-mobile-menu -->
+            <div class="body-overlay"></div>
+        <!-- header extra info end  -->
+   
+
+        <main>
+
+            <div class="feature-product-wrapper-bg position-relative" style="background-color: white">
+                <!-- ====== feature-area-start=========================================== -->
+                    <div class="feature-area feature-product-bg mb-100 pt-195 over-hidden">
+                        <div class="container">
+                            <div class="row ">
+                                <div class="col-xl-2  col-lg-6  col-md-12  col-sm-12 col-12">
+                                    <div class="feature-img wow fadeInLeft" data-wow-duration="1.6s">
+                                        <img src="../static/picture/feature-img.png" alt="">
+                                    </div><!-- /service-img -->
+                                </div><!-- /col -->
+                                <div class="col-xl-6  col-lg-6  col-md-12  col-sm-12 col-12">
+                                    <div class="feature-content mt-100 ">
+                                        <div class="title" style="margin-top: -150px">
+                                            <span class="sub-heading d-block f-700 theme-color">Age</span>
+                                            <h3 class="f-700">各个年龄段分布</h3>
+                                        </div><!-- /title -->
+                                              <div class="about-content mt-35 b-50 pt-10">
+                                                    <div id="example" class="example-div" >
+                                                        <script type="text/javascript">
+
+                                                                var chartDom = document.getElementById('example');
+                                                                var myChart = echarts.init(chartDom);
+                                                                var option;
+
+
+                                                                var data = {{ canshu | tojson }};
+
+                                                                // 提取用于图表的数据
+
+                                                                // 提取各自元组的值
+                                                                var nv_0 = data[0][2];
+                                                                var nv_1 = data[1][2];
+                                                                var nv_2 = data[2][2];
+                                                                var nv_3 = data[3][2];
+                                                                var nv_4 = data[4][2];
+                                                                var nv_5 = data[5][2];
+                                                                var nv_6 = data[6][2];
+                                                                var nv_7 = data[7][2];
+
+
+                                                                var nan_0 = data[8][2];
+                                                                var nan_1 = data[9][2];
+                                                                var nan_2 = data[10][2];
+                                                                var nan_3 = data[11][2];
+                                                                var nan_4 = data[12][2];
+                                                                var nan_5 = data[13][2];
+                                                                var nan_6 = data[14][2];
+                                                                var nan_7 = data[15][2];
+
+                                                                var wei_0 = data[16][2];
+                                                                var wei_1 = data[17][2];
+                                                                var wei_2 = data[18][2];
+                                                                var wei_3 = data[19][2];
+                                                                var wei_4 = data[20][2];
+                                                                var wei_5 = data[21][2];
+                                                                var wei_6 = data[22][2];
+                                                                var wei_7 = data[23][2];
+
+                                                                option = {
+                                                                  title: {
+                                                                    text: ''
+                                                                  },
+                                                                  tooltip: {
+                                                                    trigger: 'axis',
+                                                                    axisPointer: {
+                                                                      type: 'shadow'
+                                                                    }
+                                                                  },
+                                                                  legend: {},
+                                                                  grid: {
+                                                                    left: '3%',
+                                                                    right: '4%',
+                                                                    bottom: '3%',
+                                                                    containLabel: true
+                                                                  },
+                                                                  xAxis: {
+                                                                    type: 'value',
+                                                                    boundaryGap: [0, 0.01]
+                                                                  },
+                                                                  yAxis: {
+                                                                    type: 'category',
+                                                                    data: ['小于18岁', '18-24岁', '25-29岁', '30-34岁', '35-39岁', '40-49岁','大于50岁']
+                                                                  },
+                                                                  series: [
+                                                                      {
+                                                                      name: '女',
+                                                                      type: 'bar',
+                                                                      data: [nv_1, nv_2, nv_3, nv_4, nv_5,nv_6,nv_7]
+                                                                    },
+                                                                    {
+                                                                      name: '男',
+                                                                      type: 'bar',
+                                                                      data: [nan_1, nan_2, nan_3, nan_4, nan_5,nan_6,nan_7]
+                                                                    },
+
+                                                                  ]
+                                                                };
+
+                                                                option && myChart.setOption(option);
+                                                        </script>
+                                </div>
+
+                            </div><!-- /about-content -->
+                                    </div><!-- /service-content -->
+                                </div><!-- /col -->
+                            </div><!-- /row -->
+                        </div><!-- /container -->
+                    </div><!-- feature-area-end -->
+            </div><!-- /feature-product-wrapper-bg -->
+            <img class="f-img-bg w-100 position-absolute top-0 left-0 right-0 w-100 mt-50 mb-100 z-index-1 slider-area slider5-bg overly position-relative slider-height d-flex align-items-center justify-content-center position-relative over-hidden no-repeat bg-cover" src="../static/picture/bg.png" alt="" style="background-color: white">
+
+        </main>
+
+        <!-- All js here -->
+        <script src="../static/js/modernizr-3.5.0.min.js"></script>
+        <script src="../static/js/jquery-1.12.4.min.js"></script>
+        <script src="../static/js/popper.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+        <script src="../static/js/one-page-nav-min.js"></script>
+        <script src="../static/js/slick.min.js"></script>
+        <script src="../static/js/wow.min.js"></script>
+        <script src="../static/js/plugins.js"></script>
+        <script src="../static/js/jquery.meanmenu.min.js"></script>
+        <script src="../static/js/main.js"></script>
+    	
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <script src="../static/js/echarts.min.js"></script>
+        <script src="../static/js/echarts-wordcloud.min.js"></script>
+
+        <title>电商交易数据可视化</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico in the root directory -->
+        
+
+        <!-- All css here -->
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="../static/css/animate.css">
+        <link rel="stylesheet" href="../static/css/slick.css">
+        <link rel="stylesheet" href="../static/css/meanmenu.css">
+        <link rel="stylesheet" href="../static/css/default.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/responsive.css">
+
+        <style>
+        .example-div {
+            width: 1800px;
+            height: 1000px;
+            top: -230px;
+            bottom: 0;
+            right: 720px;
+            {#background-color: #c51717;#}
+
+        }
+        </style>
+
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        <!--  ====== preloader=============================================  -->
+        <div id="preloader">
+            <div id="loading">
+                <div id="loading-center">
+                    <div id="loading-center-absolute">
+                    <div class="object" id="object_one"></div>
+                    <div class="object" id="object_two"></div>
+                    <div class="object" id="object_three"></div>
+                    <div class="object" id="object_four"></div>
+                    <div class="object" id="object_five"></div>
+                    <div class="object" id="object_six"></div>
+                    <div class="object" id="object_seven"></div>
+                    <div class="object" id="object_eight"></div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div><!-- /preloader -->
+
+        <!--  ====== header-area-start=======================================  -->
+        <header>
+            <div id="header-sticky" class="transparent-header header-area">
+                <div class="header header5">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3 col-4">
+                                <div class="logo d-inline-block">
+{#                                    <h1 class="text-white wow fadeIn f-700 pb-15 text-center" style="margin-left: -300px";>电商交易数据可视化</h1>#}
+                                    <a href="/home"><h1 class="text-white wow fadeIn f-700 pb-15 transition-3" style="margin-left: -300px">电商交易数据可视化</h1></a>
+
+                                </div>
+                            </div><!-- /col -->
+                            <div class="col-xl-8 col-lg-9 col-md-8 col-sm-8 col-8 d-flex justify-content-end" style="margin-right: -400px">
+                               <div class="main-menu">
+                                   <nav id="mobile-menu">
+                                        <ul class="d-block">
+                                            <li>
+                                                <a class="active text-white" href="/home">首 页</a>
+                                            </li>
+                                            <li>
+                                                <a class="text-white" href="/rata">男女比例</a>
+                                            </li>
+                                            <li>
+                                                <a class="text-white" href="/action">消费行为</a>
+                                            </li>
+                                            <li>
+                                                <a class="text-white" href="/age">年龄数据</a>
+                                            </li>
+                                            <li>
+                                                <a class="text-white" href="/item">热门商品词云</a>
+                                            </li>
+                                            <li>
+                                                <a class="text-white" href="/province">各省份消费数据</a>
+                                            </li>
+                                             <li>
+                                                <a class="text-white" href="/recall">回头客预测</a>
+                                            </li>
+                                        </ul>
+                                   </nav>
+                               </div><!-- /main-menu -->
+
+                            </div><!-- /col -->
+                        </div><!-- /row -->
+                    </div><!-- /container -->
+                </div>
+            </div><!-- /header-bottom -->
+        </header>
+        <!--  header-area-end  -->
+
+
+        <!--  ====== header extra info start================================== -->
+            <!-- side-mobile-menu start -->
+            <div class="side-mobile-menu bg-white pt-50  pb-30 pl-30 pr-30">
+                <div class="close-icon float-right pt-10 mb-20">
+                    <a href="javascript:void(0);"><span class="icon-clear theme-color"><i class="fa fa-times"></i></span></a>
+                </div>
+                <div class="mobile-menu"></div>
+            </div><!-- /side-mobile-menu -->
+            <div class="body-overlay"></div>
+        <!-- header extra info end  -->
+   
+
+        <main>
+
+            <div class="feature-product-wrapper-bg position-relative" style="background-color: white">
+                <!-- ====== our-product-area-start================================ -->
+                <div id="product" class="product-area pt-110 pb-260 over-hidden">
+                   
+                    <div class="container position-relative ">
+                        <div class="product-bg">
+                            <img src="../static/picture/product-bg.png" alt="">
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-xl-6 col-lg-7 col-md-8  col-sm-12 col-12">
+                                <div class="title text-center d-inline-block mb-70" >
+                                    <span class="sub-heading d-block f-700 theme-color">WordCloud</span>
+                                    <h3 class="f-700 mb-20">热门商品词云</h3>
+                               </div><!-- /title -->
+                                <div class="about-content mt-35 b-50 pt-10">
+                                                    <div id="example" class="example-div wow fadeInUp" data-wow-duration="1.2s">
+                                                        <script type="text/javascript">
+                                                            var myChart = echarts.init(document.getElementById('example'));
+                                                            image1='data:image/jpg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAoHBwkHBgoJCAkLCwoMDxkQDw4ODx4WFxIZJCAmJSMgIyIoLTkwKCo2KyIjMkQyNjs9QEBAJjBGS0U+Sjk/QD3/2wBDAQsLCw8NDx0QEB09KSMpPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT3/wAARCAIAAgADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD16iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKq6jqdno9m13qFzHbW6dXkOB7Aep9q5SX4veEYpdv9oSvjulu+P5UAdrRXD/APC4fCX/AD+z/wDgM/8AhR/wuHwl/wA/s/8A4DP/AIUAdxRXD/8AC4fCX/P7P/4DP/hR/wALh8Jf8/s//gM/+FAHcUVw/wDwuHwl/wA/s/8A4DP/AIUf8Lh8Jf8AP7P/AOAz/wCFAHcUVxCfGDwgzbWvpk9zbSY/lW/o/izQ9fbZpepwTydfLB2v9dp5oA2KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA+ZfiD4ouPE/ie5kZz9lgkaK3jzwFBxnHqev5elcrRRQAUUUUAFFFFABRRRQAU9HaNlaNiGXkEcEH60yigD2P4ZfFCaW5h0PX5fM8w7be7c/Nu7K5756A+vrnNew18eBtv3a+mPhv4n/4SfwnBLM+69g/c3HqWA4Y/UYP5+lAHV0UUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAHx3RXVfEHwtceGPE9yjIfsk8jS28gHylSc7c+o6Y+nrXK0AFFFFABRRRQAUUUUAFFFFABXdfCfxKdA8WJbzPiz1DEMnoHz8jfmcfRjXC0ucUAfYdFcz8PvEv/AAlPhO2upGzdRfubj/fUDn8Rg/jXTUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAFa/0yz1aza11C2juIH6xyICPY+xrlZfhH4Qlk3f2a6buyXEgH5Zrs6KAOI/4U/4Q/wCfGb/wJf8Axo/4U/4Q/wCfGb/wJf8Axrt6KAOI/wCFP+EP+fGb/wACX/xo/wCFP+EP+fGb/wACX/xrt6KAOEn+DnhOWJljtrmFv76XDEj6ZyK8V8Y+GJvCPiKXTZH8yPaJIZMY3oc4OPqCPqDX1LXkXx50rdbaVqqr91mtpD9RuX/0FvzoA8YooooAKKKKAPQPhB4n/sPxUtjM+201LER9BJ/AfzJX/gXtX0JXx8jNGwZWIZTkEdj619Q+BfEi+KfCtpfMw+0KPKuB6SL1+meD/wACFAHQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFcr8S9K/tbwDqaKuZIY/tCfVDk/+O7h+NdVTZYknieKRcxuCCPUEYIoA+PaKvaxYPpOs3unyfetpmi+uCRVGgAooooAK9H+DfiX+yfEraZcSYtdQwo9BKPun8eR9SK84qSKV4JUljYpIhBVh1BzkGgD7AorD8HeIk8T+F7TUVx5zJsnA/hkHBHtzz+IrcoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPnn4yaV9g8dyzquI72JZh6bgNp/Vc/jXA17l8dtL8/Q9P1JV+a2mMT/AO64zk/io/76rw2gAooooAKKKKAPTPgt4m/s3XpNGuJMW9/zH6CUDj8xkfgK94r5BgnltbmKeF2SWJw6OOoYHII/Gvqfwpr0fiXw1aanHjdKmJEH8Ljhh+YP6UAa9FFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAGB460v+2vBWq2irmQ25kQf7S/MAPxUD8a+Wq+xK+UPE+l/2L4l1HT8YWCdlT/czlT+RFAGVRRRQAUUUUAFepfBLxP8AYdXm0O4f9zefvIPQSgcj8QP/AB0V5bU9ndzWF5BdW77JoZBJG/owOQaAPr2iszw3rcPiLw/aanD92eMF0/usOGX8CDWnQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAV4H8b9K+x+L4b5V+W+t1JPqyfKf02175Xm/wAb9K+1eEYL5V+ayuBk+ivwf120AeB0UUUAFFFFABRRRQB6n8F/FyadfS6DePiG7bfbk9BJjBX8QB+XvXuNfHnSvQfD/wAZdd0e2S2vEj1GFAADKSsgA7bh1+pBPvQB9BUV47/wv7/qXf8Aye/+10f8L/8A+pc/8nv/ALXQB7FRXjv/AAv/AP6lz/ye/wDtdH/C/wD/AKlz/wAnv/tdAHsVFeO/8L//AOpc/wDJ7/7XR/wv/wD6lz/ye/8AtdAHsVFeO/8AC/8A/qXP/J7/AO10f8L/AP8AqXP/ACe/+10AexUV47/wv/8A6lz/AMnv/tdH/C//APqXP/J7/wC10AexUV47/wAL/wD+pc/8nv8A7XR/wv8A/wCpc/8AJ7/7XQB7FRXjv/C//wDqXP8Aye/+10f8L/8A+pc/8nv/ALXQB7FRXjv/AAv/AP6lz/ye/wDtdH/C/wD/AKlz/wAnv/tdAHsVFeO/8L//AOpc/wDJ7/7XR/wv/wD6lz/ye/8AtdAHsVFeO/8AC/8A/qXP/J7/AO10f8L/AP8AqXP/ACe/+10AexUV47/wv/8A6lz/AMnv/tdH/C//APqXP/J7/wC10AexUV47/wAL/wD+pc/8nv8A7XR/wv8A/wCpc/8AJ7/7XQB7FRXjv/C//wDqXP8Aye/+10f8L/8A+pc/8nv/ALXQB7FRXjv/AAv/AP6lz/ye/wDtdH/C/wD/AKlz/wAnv/tdAHsVFeO/8L//AOpc/wDJ7/7XR/wv/wD6lz/ye/8AtdAHsVFeO/8AC/8A/qXP/J7/AO10f8L/AP8AqXP/ACe/+10AexUV47/wv/8A6lz/AMnv/tdH/C//APqXP/J7/wC10AexUV47/wAL/wD+pc/8nv8A7XR/wv8A/wCpc/8AJ7/7XQB7FRXjv/C//wDqXP8Aye/+10f8L/8A+pc/8nv/ALXQB7FRXjv/AAv/AP6lz/ye/wDtdH/C/wD/AKlz/wAnv/tdAHsVFeO/8L//AOpc/wDJ7/7XR/wv/wD6lz/ye/8AtdAHsVFeO/8AC/8A/qXP/J7/AO10f8L/AP8AqXP/ACe/+10AexUV5RY/HmxllVb7Rp4I/wC/FMJMfgQtej6LruneItPW80u5SeE9cdVPoR1B9qANCiiigAooooAKKKKACiiigArK8U6X/bfhjUtP25a4t2Cf74GV/wDHgK1aKAPjuiug8caV/Y3jXVbNVwq3DPGP9hvmUfkRXP0AFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABXV/DvxPN4a8VWz7z9kuXWG5TPBUnAb8Cc/n61ylWtOtXvdStbaH/WTSrGn1JAH86APrqiiigAooooAKKKKACiiigAooooA8O+Oml+Rr9jqSr8tzCYm/wB5D1/JgPwryyvob4y6X9v8Cvcqv7yymWX32k7SP/Hgf+A1880AFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABXefB7Rv7U8cRTsu6Kwjac+m7oo+uTn/gNcHXvPwO0f7H4YuNSZf3l9NhD/ALCZA/8AHi35UAel0UUUAFFFFABRRRQAUUUUAFFFFAFPWtOTVtFvdPk+7cwtF9MggH+tfJcsbxSPHINrISCPQg4Ir7Ar5l+JOl/2T481OJVxHNJ9oT6ONx/UkfhQBytFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAEiRtLIqRrlnIAA7k9BX1h4e0pdE8PWOmrj/RoVjJHdgOT+Jyfxr57+Fuj/wBsePLBWXdFbE3Un/AOR/49t/OvpSgAooooAKKKKACiiigAooooAKKKKACvGfjzpe270rVVX76NbSH6Hcv/AKE35V7NXGfFnSv7T8AXrKuZLUrcp/wE4J/75ZqAPm6iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD2z4FaP5Wn6hq8i/NNIII/wDdUZJH4kf9816xWJ4M0f8AsHwjpunsu2RIQZP99vmb9WIrboAKKKKACiiigAooooAKKKKACiiigAqG8tUvrG4tJuY7iNo3/wB0gg/oamooA+Q7y1exvri1m4kgkaN/95SQf1FV67T4s6X/AGZ4/vWVdsd2FuU/4EMH/wAeVq4ugAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACuj8BaP/AG7410y0Zcx+aJZPTavzEH64x+Nc5Xr/AMCNH3T6lrEi8IBbRn3OGb/2X86APZaKKKACiiigAooooAKKKKACiiigAooooAKKKKAPI/jzpW600rVVX7jNbSH6jcv/AKC3514vX058StK/tbwHqcSrmSGP7Qn1Q7jj8AR+NfMdABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFfTnw30f+xPAumwMuJpo/tEn+8/Iz7gED8K+evC2jtrvifTtNx8txMof/cHLH/vkGvq1VVV2rwq0AFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFADZUSWJ45Fyrggg9wRgivkvWdObSdavdPk+9bTNF9cEjNfW1fPXxl0v7B46e5Ufu72FJv8AgQG0j/x0H8aAOAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPU/gXo/2nXr3VZB8tpEI0/3nPJH/AAFSP+BV7jXFfCXR/wCyfAdrIy4mvS1y/wBDwv8A46qn8a7WgAooooAKKKKACiiigAooooAKKKKACiiigAooooAK8t+O2lefoOn6kq/NbTGJ/wDdcdT9Co/76r1KsHxxpf8AbPgrVbPbljAzp/vr8wH5qB+NAHyzRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVd0fT5NW1e0sIf9ZcyrEPbJAzVKvRvgpo/2/wAYvfSL+7sISwPbe3yj9Nx/CgD3q2gS1tooIV2xxKFQeigYA/IVJRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUU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'
+                                                            var maskResource = new Image();
+                                                            maskResource.src = image1;
+                                                            var data = {{ canshu | tojson }};
+
+                                                                // 提取用于图表的数据
+
+                                                                // 提取各自元组的值
+                                                                var nv_0 = data[0][1];
+                                                                var nv_1 = data[1][1];
+                                                                var nv_2 = data[2][1];
+                                                                var nv_3 = data[3][1];
+                                                                var nv_4 = data[4][1];
+                                                                var nv_5 = data[5][1];
+                                                                var nv_6 = data[6][1];
+                                                                var nv_7 = data[7][1];
+                                                                var nv_8 = data[8][1];
+                                                                var nv_9 = data[9][1];
+                                                                var nv_10 = data[10][1];
+                                                                var nv_11 = data[11][1];
+                                                                var nv_12 = data[12][1];
+                                                                var nv_13 = data[13][1];
+                                                                var nv_14 = data[14][1];
+                                                                var nv_15 = data[15][1];
+                                                                var nv_16 = data[16][1];
+                                                                var nv_17 = data[17][1];
+                                                                var nv_18 = data[18][1];
+                                                                var nv_19 = data[19][1];
+                                                                var nv_20 = data[20][1];
+                                                                var nv_21 = data[21][1];
+                                                                var nv_22 = data[22][1];
+
+
+
+                                                                // 指定图表的配置项和数据
+                                                                var option = {
+
+                                                                    title: {
+                                                                    text: '',
+                                                                    left: 'center'
+                                                                },
+                                                                tooltip: {},
+                                                                series: [
+                                                                    {
+                                                                        type : 'wordCloud',  //类型为字符云
+                                                                        shape:'smooth',  //平滑
+                                                                        gridSize : 30, //网格尺寸
+                                                                        rotationStep: 3,
+                                                                        sizeRange : [ 10, 60],
+                                                                        maskImage: maskResource,
+                                                                        rotationRange : [-35,-15, 0,15,35], //旋转范围
+                                                                            textStyle: {
+                                                                                  fontFamily: '微软雅黑',
+                                                                                  fontsize:20,
+                                                                                      color: function () {
+                                                                                          return 'rgb(' + [
+                                                                                            Math.round(Math.random() * 250),
+                                                                                            Math.round(Math.random() * 250),
+                                                                                            Math.round(Math.random() * 250)
+                                                                                          ].join(',') + ')';
+                                                                                        },
+                                                                                emphasis : {
+                                                                                    shadowBlur : 5,  //阴影距离
+                                                                                    shadowColor : '#04e3f1',  //阴影颜色
+                                                                                    scale: 1.5
+                                                                                        }
+                                                                                    },
+                                                                                    left: 'center',
+                                                                                    right: '100%',
+                                                                                    bottom: '100%',
+                                                                                    width:'100%',
+                                                                                    height:'100%',
+                                                                                    data:[
+                                                                                        {value: nv_0, name: '食品'},
+                                                                                        {value: nv_1, name: '女装男装'},
+                                                                                        {value: nv_2, name: '手机数码'},
+                                                                                        {value: nv_3, name: '洗护'},
+                                                                                        {value: nv_4, name: '文具'},
+                                                                                        {value: nv_5, name: '医药健康'},
+                                                                                        {value: nv_6, name: '玩具'},
+                                                                                        {value: nv_7, name: '美妆'},
+                                                                                        {value: nv_8, name: '汽车'},
+                                                                                        {value: nv_9, name: '家居'},
+                                                                                        {value: nv_10, name: '户外'},
+                                                                                        {value: nv_11, name: '办公'},
+                                                                                        {value: nv_12, name: '定制'},
+                                                                                        {value: nv_13, name: '工业品'},
+                                                                                        {value: nv_14, name: '宠物'},
+                                                                                        {value: nv_15, name: '家用杂物'},
+                                                                                        {value: nv_16, name: '农资采购'},
+                                                                                        {value: nv_17, name: '花鸟'},
+                                                                                        {value: nv_18, name: '文娱'},
+                                                                                        {value: nv_19, name: '游戏中心'},
+                                                                                        {value: nv_20, name: '电玩'},
+                                                                                        {value: nv_21, name: '全屋定制'},
+                                                                                        {value: nv_22, name: '美容护肤'},
+
+                                                                                        {value: nv_0, name: '食品'},
+                                                                                        {value: nv_1, name: '女装男装'},
+                                                                                        {value: nv_2, name: '手机数码'},
+                                                                                        {value: nv_3, name: '洗护'},
+                                                                                        {value: nv_4, name: '文具'},
+                                                                                        {value: nv_5, name: '医药健康'},
+                                                                                        {value: nv_6, name: '玩具'},
+                                                                                        {value: nv_7, name: '美妆'},
+                                                                                        {value: nv_8, name: '汽车'},
+                                                                                        {value: nv_9, name: '家居'},
+                                                                                        {value: nv_10, name: '户外'},
+                                                                                        {value: nv_11, name: '办公'},
+                                                                                        {value: nv_12, name: '定制'},
+                                                                                        {value: nv_13, name: '工业品'},
+                                                                                        {value: nv_14, name: '宠物'},
+                                                                                        {value: nv_15, name: '家用杂物'},
+                                                                                        {value: nv_16, name: '农资采购'},
+                                                                                        {value: nv_17, name: '花鸟'},
+                                                                                        {value: nv_18, name: '文娱'},
+                                                                                        {value: nv_19, name: '游戏中心'},
+                                                                                        {value: nv_20, name: '电玩'},
+                                                                                        {value: nv_21, name: '全屋定制'},
+                                                                                        {value: nv_22, name: '美容护肤'},
+
+                                                                                        {value: nv_0, name: '食品'},
+                                                                                        {value: nv_1, name: '女装男装'},
+                                                                                        {value: nv_2, name: '手机数码'},
+                                                                                        {value: nv_3, name: '洗护'},
+                                                                                        {value: nv_4, name: '文具'},
+                                                                                        {value: nv_5, name: '医药健康'},
+                                                                                        {value: nv_6, name: '玩具'},
+                                                                                        {value: nv_7, name: '美妆'},
+                                                                                        {value: nv_8, name: '汽车'},
+                                                                                        {value: nv_9, name: '家居'},
+                                                                                        {value: nv_10, name: '户外'},
+                                                                                        {value: nv_11, name: '办公'},
+                                                                                        {value: nv_12, name: '定制'},
+                                                                                        {value: nv_13, name: '工业品'},
+                                                                                        {value: nv_14, name: '宠物'},
+                                                                                        {value: nv_15, name: '家用杂物'},
+                                                                                        {value: nv_16, name: '农资采购'},
+                                                                                        {value: nv_17, name: '花鸟'},
+                                                                                        {value: nv_18, name: '文娱'},
+                                                                                        {value: nv_19, name: '游戏中心'},
+                                                                                        {value: nv_20, name: '电玩'},
+                                                                                        {value: nv_21, name: '全屋定制'},
+                                                                                        {value: nv_22, name: '美容护肤'},
+
+                                                                                        {value: nv_0, name: '食品'},
+                                                                                        {value: nv_1, name: '女装男装'},
+                                                                                        {value: nv_2, name: '手机数码'},
+                                                                                        {value: nv_3, name: '洗护'},
+                                                                                        {value: nv_4, name: '文具'},
+                                                                                        {value: nv_5, name: '医药健康'},
+                                                                                        {value: nv_6, name: '玩具'},
+                                                                                        {value: nv_7, name: '美妆'},
+                                                                                        {value: nv_8, name: '汽车'},
+                                                                                        {value: nv_9, name: '家居'},
+                                                                                        {value: nv_10, name: '户外'},
+                                                                                        {value: nv_11, name: '办公'},
+                                                                                        {value: nv_12, name: '定制'},
+                                                                                        {value: nv_13, name: '工业品'},
+                                                                                        {value: nv_14, name: '宠物'},
+                                                                                        {value: nv_15, name: '家用杂物'},
+                                                                                        {value: nv_16, name: '农资采购'},
+                                                                                        {value: nv_17, name: '花鸟'},
+                                                                                        {value: nv_18, name: '文娱'},
+                                                                                        {value: nv_19, name: '游戏中心'},
+                                                                                        {value: nv_20, name: '电玩'},
+                                                                                        {value: nv_21, name: '全屋定制'},
+                                                                                        {value: nv_22, name: '美容护肤'},
+
+                                                                                        {value: nv_8, name: '汽车'},
+                                                                                        {value: nv_9, name: '家居'},
+                                                                                        {value: nv_10, name: '户外'},
+                                                                                        {value: nv_11, name: '办公'},
+                                                                                        {value: nv_12, name: '定制'},
+                                                                                        {value: nv_13, name: '工业品'},
+                                                                                        {value: nv_14, name: '宠物'},
+                                                                                        {value: nv_15, name: '家用杂物'},
+                                                                                        {value: nv_16, name: '农资采购'},
+                                                                                        {value: nv_17, name: '花鸟'},
+                                                                                        {value: nv_18, name: '文娱'},
+                                                                                        {value: nv_19, name: '游戏中心'},
+                                                                                        {value: nv_20, name: '电玩'},
+                                                                                        {value: nv_21, name: '全屋定制'},
+                                                                                        {value: nv_22, name: '美容护肤'},
+                                                                            ],
+                                                                    }
+                                                                ]
+                                                                };
+
+
+                                                                option && myChart.setOption(option);
+                                                                myChart.on('click',function(param){
+
+                                                              console.log(param);
+                                                              window.open("https://s.taobao.com/search?catId=100&from=sea_1_searchbutton&q="+encodeURIComponent(param.name),'_blank')
+
+
+				                                            });
+                                                        </script>
+                                </div>
+
+                            </div><!-- /about-content -->
+
+
+                            </div><!-- /col -->
+
+
+
+
+
+
+
+                        </div><!-- /row -->
+
+                    </div><!-- /container -->
+                </div><!-- /product-area -->
+                <!-- our-product-area-end  -->
+                <img class="f-img-bg w-100 position-absolute top-0 left-0 right-0 w-100 mt-50 mb-100 z-index-1" src="../static/picture/feature-bg.png" alt="">
+            </div><!-- /feature-product-wrapper-bg -->
+
+        </main>
+
+
+
+        <!-- All js here -->
+        <script src="../static/js/modernizr-3.5.0.min.js"></script>
+        <script src="../static/js/jquery-1.12.4.min.js"></script>
+        <script src="../static/js/popper.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+        <script src="../static/js/one-page-nav-min.js"></script>
+        <script src="../static/js/slick.min.js"></script>
+        <script src="../static/js/wow.min.js"></script>
+        <script src="../static/js/plugins.js"></script>
+        <script src="../static/js/jquery.meanmenu.min.js"></script>
+        <script src="../static/js/main.js"></script>
+    	
+</body>
+</html>
